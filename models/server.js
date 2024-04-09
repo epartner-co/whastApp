@@ -22,8 +22,8 @@ class Server {
 
     listen() {
         // Ejecutar servidor
-        this.app.listen(this.port, ()=>{
-            console.log(`Servidor corriendo en puerto: ${this.port}`);
+        this.app.listen(this.port,this.host, ()=>{
+            console.log(`Servidor corriendo en puerto: ${this.port} y en la ip: ${this.host}`);
         });
     }
 }
