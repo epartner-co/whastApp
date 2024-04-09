@@ -5,7 +5,8 @@ class Server {
 
     constructor() {
         this.app = express();
-        this.port = process.env.PORT || 3000;
+        this.host = process.env.HOST || '172.26.12.51'
+        this.port = process.env.PORT || 443;
         this.userPath = '/';
 
         // Rutas del servicio
