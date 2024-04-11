@@ -1,10 +1,5 @@
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
-const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/api.epartner-la.com/fullchain.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/api.epartner-la.com/privkey.pem')
-};
+
 
 class Server {
 
@@ -25,13 +20,11 @@ class Server {
 
 
 
-
     listen() {
         // Ejecutar servidor
-        https.createServer(options, (req, res) => {
-            res.writeHead(200);
-            res.end('hello world\n');
-          }).listen(443);
+        this.app.listen(this.port,this.host, ()=>{
+            console.log(`Servidor corriendo en puerto: ${this.port} y en la ip: ${this.host}`);
+        });
     }
 }
 
