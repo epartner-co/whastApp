@@ -1,6 +1,6 @@
 const express = require('express');
-const https = require('node:https');
-const fs = require('node:fs');
+const https = require('https');
+const fs = require('fs');
 const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/api.epartner-la.com/fullchain.pem'),
     cert: fs.readFileSync('/etc/letsencrypt/live/api.epartner-la.com/privkey.pem')
